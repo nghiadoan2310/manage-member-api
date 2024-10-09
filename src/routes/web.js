@@ -1,18 +1,18 @@
-import express from 'express'
+import express from "express";
 
-import {homeController} from '../controller/homeController'
+import { userController } from "../controller/userController";
 
-const router = express.Router()
+const router = express.Router();
 
 const initWebRoutes = (app) => {
-    router.get('/', homeController.handleHomePage)
-    router.get('/users', homeController.handleUserPage)
-    router.get('/update-user/:id', homeController.handleUpdateUserPage)
-    router.post('/delete-user/:id', homeController.handleDeleteUser)
-    router.post('/users/create-user', homeController.handleCreateUser)
-    router.post('/user/update-user/:id', homeController.handleUpdateUser)
+  router.get("/", userController.handleHomePage);
+  router.get("/users", userController.handleUserPage);
+  router.get("/update-user/:id", userController.handleUpdateUserPage);
+  router.post("/delete-user/:id", userController.handleDeleteUser);
+  router.post("/users/create-user", userController.handleCreateUser);
+  router.post("/user/update-user/:id", userController.handleUpdateUser);
 
-    return app.use('/', router)
-}
+  return app.use("/", router);
+};
 
-export default initWebRoutes
+export default initWebRoutes;

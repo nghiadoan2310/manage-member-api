@@ -63,7 +63,7 @@ const handleUpdateUser = async (req, res) => {
     // .catch(err => console.error(err))
 }
 
-export const homeController = { 
+export const userController = { 
     handleHomePage,
     handleUserPage,
     handleCreateUser,
